@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDureeLocationsTable extends Migration
+class CreateTypeArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDureeLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('duree_locations', function (Blueprint $table) {
+        Schema::create('type_articles', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
-            $table->time('valeurEnHeure');
+            $table->string("nom")->unique();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateDureeLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('duree_locations');
+        Schema::dropIfExists('type_articles');
     }
 }
