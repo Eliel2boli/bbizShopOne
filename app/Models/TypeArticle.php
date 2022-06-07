@@ -9,5 +9,12 @@ class TypeArticle extends Model
 {
     use HasFactory;
 
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
+    public function proprietes(){
+        return $this->hasMany(ProprieteArticle::class);  
+    }
+
 
 }

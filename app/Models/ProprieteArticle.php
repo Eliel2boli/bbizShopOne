@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProprieteArticle extends Model
 {
     use HasFactory;
+
+    public function types(){
+        return $this->belongsTo(TypeArticle::class, "type_article_id", "id");
+    }
 }

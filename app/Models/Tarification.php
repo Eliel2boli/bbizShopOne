@@ -9,5 +9,7 @@ class Tarification extends Model
 {
     use HasFactory;
 
-
+    public function articles(){
+        return $this->belongsTo(Article::class, "article_id","id");
+    }
 }

@@ -9,5 +9,8 @@ class Client extends Model
 {
     use HasFactory;
 
+    public function ventes(){
+        return $this->hasMany(Vente::class, "vente_id","id");
+    }
 
 }
